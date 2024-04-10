@@ -1,0 +1,81 @@
+.oh-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+}
+.oh-header {
+  background-color: #f8f9fa;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 5px 20px;
+}
+.oh-header > div {
+  display: flex;
+}
+
+.oh-item {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 5px 20px;
+}
+
+.oh-item > div {
+  display: flex;
+}
+.oh-item input{
+    padding: 8px 12px;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #ccc;
+}
+
+.add {
+  width: 82px;
+  height: 29.03px;
+  color: white;
+  background-color: blue;
+  border: 2px solid blue;
+  border-radius: 4px;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-select {
+  display: inline-block;
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #ccc;
+}
+
+.dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+}
+
+.dropdown-option {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.dropdown:hover .dropdown-options {
+  display: block;
+}

@@ -1,0 +1,46 @@
+.calculator-container{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+}
+.title{
+    font-family: Inter;
+font-size: 28px;
+font-weight: 900;
+line-height: 18px;
+letter-spacing: 4.360000133514404px;
+text-align: left;
+color: #203DD5;
+}
+.summary-container{
+    display: flex;
+    width:100%;
+}
+
+.cost-entry{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap:20px;
+}
+
+
+.block-design{
+    display: flex;
+    background-color: white;
+    padding:10px 20px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px #cbddee;
+
+}
+
+.left-block{
+    flex:4;
+    
+}
+.left-block .block-design{
+    height: 100%;
+}
+.right-block{
+    flex:1
+}
