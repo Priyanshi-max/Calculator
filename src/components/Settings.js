@@ -3,13 +3,17 @@ import "./settings.css";
 import { useEmployees } from '../context/EmployeesContext';
 
 export default function Settings() {
-  const { setNumberOfEmployees } = useEmployees();
+  const { setNumberOfEmployees,setProfitPercentage}  = useEmployees();
+ 
 
   const handleNumberOfEmployeesChange = (event) => {
     const newValue = parseInt(event.target.value);
     setNumberOfEmployees(newValue);
   };
-
+ const handleProfitPercentageChange = (event)=>{
+  const newValue = parseInt(event.target.value);
+  setProfitPercentage(newValue);
+ }
   return (
     <div className="settings-container">
       <h2>Settings</h2>
@@ -19,7 +23,7 @@ export default function Settings() {
       </div>
       <div className="setting-item">
         <label>Profit Percentage:</label>
-        <input type='number' />
+        <input type='number' onChange={handleProfitPercentageChange} />
       </div>
       <div className="setting-item">
         <label>Other:</label>

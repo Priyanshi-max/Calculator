@@ -3,9 +3,10 @@ import { useEmployees } from "../context/EmployeesContext";
 import "./summary.css";
 
 export default function Summary({ totalAmount }) {
-  const { numberOfEmployees } = useEmployees();
+  const { numberOfEmployees ,profitPercentage } = useEmployees();
 
   const costPerPerson = totalAmount / numberOfEmployees;
+  const profit = (totalAmount * profitPercentage) / 100;
 
   return (
     <div className="summary-block">
@@ -22,7 +23,7 @@ export default function Summary({ totalAmount }) {
       <div className="summary-info">
         <p>Total Cost - Rs.{totalAmount}</p>
         <p>Cost Per Person - Rs.{costPerPerson}</p>
-        <p>Profit</p>
+        <p>Profit - Rs.{profit}</p>
         <p>Total Cost Per Employee</p>
       </div>
     </div>
