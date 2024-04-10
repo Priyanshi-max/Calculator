@@ -41,7 +41,7 @@ function OhItem(props) {
             </div>
           </div>
         </div>
-        {props.totalItems > 1 && <button onClick={props.deleteItem}>X</button>}
+        {props.totalItems > 1 && <button className="delete-button" onClick={props.deleteItem}>X</button>}
       </div>
     </div>
   );
