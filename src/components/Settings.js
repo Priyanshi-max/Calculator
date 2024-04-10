@@ -16,7 +16,7 @@ export default function Settings() {
  }
   return (
     <div className="settings-container">
-      <h2>Settings</h2>
+      <h3>Settings</h3>
       <div className="setting-item">
         <label>Number of Employees:</label>
         <input type='number' onChange={handleNumberOfEmployeesChange} />
