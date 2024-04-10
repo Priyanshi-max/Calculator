@@ -26,6 +26,7 @@
 
 .input-group p {
   margin: 0;
+  
 }
 
 .input-group input {
@@ -51,5 +52,5 @@
 
 .summary-block p {
   font-size: 16px;
-  color: #333;
+  color: rgb(61, 71, 92);
 }

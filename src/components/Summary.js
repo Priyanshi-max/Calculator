@@ -23,10 +23,10 @@ export default function Summary({ totalAmount }) {
         </div>
       </div>
       <div className="summary-info">
-        <p>Total Cost - Rs.{totalAmount}</p>
-        <p>Cost Per Person - Rs.{costPerPerson}</p>
-        <p>Profit - Rs.{profit}</p>
-        <p>Total Cost Per Employee - Rs.{totalCostPerEmployee}</p>
+        <p style={{color:"#ccc"}}> Total Cost - Rs.{totalAmount}</p>
+        <p style={{color:"#ccc"}}>Cost Per Person - Rs.{costPerPerson}</p>
+        <p style={{color:"#ccc"}}>Profit -Rs.{profit}</p>
+        <p style={{color:"#ccc"}}>Total Cost Per Employee - Rs.{totalCostPerEmployee}</p>
       </div>
     </div>
   );

@@ -51,7 +51,7 @@ input:checked + .slider:before {
 
 .setting-item label {
   margin-right: 10px;
-  color: #3D475C;
+  color: #b7c0d1;
 }
 .setting-item:nth-child(4) {
   margin-bottom: 10px; 
