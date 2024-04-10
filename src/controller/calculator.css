@@ -36,11 +36,11 @@ color: #203DD5;
 
 .left-block{
     flex:4;
+    /* min-height: 100vh; */
     
 }
-.left-block .block-design{
-    height: 100%;
-}
+
 .right-block{
-    flex:1
+    flex:1;
+    min-height: 40vh;
 }
