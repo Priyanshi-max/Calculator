@@ -1,7 +1,12 @@
 import React from "react";
+import { useEmployees } from "../context/EmployeesContext";
 import "./summary.css";
 
-export default function Summary({totalAmount}) {
+export default function Summary({ totalAmount }) {
+  const { numberOfEmployees } = useEmployees();
+
+  const costPerPerson = totalAmount / numberOfEmployees;
+
   return (
     <div className="summary-block">
       <div className="employee-info">
@@ -15,10 +20,10 @@ export default function Summary({totalAmount}) {
         </div>
       </div>
       <div className="summary-info">
-        <p>Total Cost - Rs.{ totalAmount }</p>
-        <p>Per Employee Cost</p>
+        <p>Total Cost - Rs.{totalAmount}</p>
+        <p>Cost Per Person - Rs.{costPerPerson}</p>
         <p>Profit</p>
-        <p>Total cost Per Employee</p>
+        <p>Total Cost Per Employee</p>
       </div>
     </div>
   );
