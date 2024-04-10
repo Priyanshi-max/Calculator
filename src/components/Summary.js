@@ -5,10 +5,22 @@ import "./summary.css";
 export default function Summary({ totalAmount }) {
   const { numberOfEmployees, profitPercentage } = useEmployees();
   const [employeeSalary, setEmployeeSalary] = useState(0);
+  const [addGst, setAddGst] = useState(false);
 
   const costPerPerson = totalAmount / numberOfEmployees;
-  const profit = (totalAmount * profitPercentage) / 100;
+  
   const totalCostPerEmployee = costPerPerson + parseFloat(employeeSalary);
+  const profit = (totalCostPerEmployee * profitPercentage) / 100;
+  const calculateGst = () => {
+    if (addGst) {
+      const gstAmount = (totalCostPerEmployee * 18) / 100;
+      return gstAmount;
+    }
+    return 0;
+  };
+
+  const gst = calculateGst();
+  const totalCostWithGst = totalCostPerEmployee + gst;
 
   return (
     <div className="summary-block">
@@ -23,10 +35,14 @@ export default function Summary({ totalAmount }) {
         </div>
       </div>
       <div className="summary-info">
-        <p style={{color:"#ccc"}}> Total Cost - Rs.{totalAmount}</p>
+      <p style={{color:"#ccc"}}> Total Cost - Rs.{totalAmount}</p>
         <p style={{color:"#ccc"}}>Cost Per Person - Rs.{costPerPerson}</p>
-        <p style={{color:"#ccc"}}>Profit -Rs.{profit}</p>
+       
+        <p style={{color:"#ccc"}}>Profit - Rs.{profit}</p>
+       
         <p style={{color:"#ccc"}}>Total Cost Per Employee - Rs.{totalCostPerEmployee}</p>
+        {addGst && <p style={{ color: "#ccc" }}>GST - Rs.{gst}</p>} 
+        
       </div>
     </div>
   );

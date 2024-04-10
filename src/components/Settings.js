@@ -1,10 +1,10 @@
-import React from 'react';
+import React , {useState} from 'react';
 import "./settings.css";
 import { useEmployees } from '../context/EmployeesContext';
 
 export default function Settings() {
   const { setNumberOfEmployees,setProfitPercentage}  = useEmployees();
- 
+  const [addGst, setAddGst] = useState(false);
 
   const handleNumberOfEmployeesChange = (event) => {
     const newValue = parseInt(event.target.value);
@@ -14,6 +14,10 @@ export default function Settings() {
   const newValue = parseInt(event.target.value);
   setProfitPercentage(newValue);
  }
+ const toggleAddGst = () => {
+  setAddGst(!addGst);
+};
+
   return (
     <div className="settings-container">
       <p style={{color:"#3D475C" , fontSize:"14px"}}>Settings</p>
