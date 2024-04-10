@@ -16,7 +16,7 @@ export default function Settings() {
  }
   return (
     <div className="settings-container">
-      <h3>Settings</h3>
+      <p style={{color:"#3D475C" , fontSize:"14px"}}>Settings</p>
       <div className="setting-item">
         <label>Number of Employees:</label>
         <input type='number' onChange={handleNumberOfEmployeesChange} />

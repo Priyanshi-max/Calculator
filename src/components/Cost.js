@@ -41,7 +41,11 @@ function OhItem(props) {
             </div>
           </div>
         </div>
-        {props.totalItems > 1 && <button className="delete-button" onClick={props.deleteItem}>X</button>}
+        {props.totalItems > 1 && (
+          <button className="delete-button" onClick={props.deleteItem}>
+            X
+          </button>
+        )}
       </div>
     </div>
   );
@@ -70,9 +74,9 @@ export default function Cost() {
   return (
     <div className="oh-container">
       <div className="oh-header">
-        <div style={{ flex: 4 }}>Description</div>
-        <div style={{ flex: 1 }}>Amount</div>
-        <div style={{ flex: 2 }}>Occurrence</div>
+        <div style={{ flex: 4 , color:"#3D475C" , fontSize:"14px"}}>Description</div>
+        <div style={{ flex: 1 , color:"#3D475C" , fontSize:"14px" }}>Amount</div>
+        <div style={{ flex: 2 , color:"#3D475C" ,fontSize:"14px"}}>Occurrence</div>
       </div>
       <div className="oh-list">
         {ohItems.map((ohItem, idx) => {
