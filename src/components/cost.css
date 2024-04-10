@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  padding: 5px 20px;
+  padding: 20px;
 }
 .oh-header > div {
   display: flex;
@@ -22,6 +22,7 @@
   flex-direction: row;
   width: 100%;
   padding: 5px 20px;
+  margin-top: 10px;
 }
 
 .oh-item > div {
@@ -33,16 +34,17 @@
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 4px;
-  color: #ccc;
+  color: #8f7e7e;
 }
 
 .add {
-  width: 82px;
+  width: 72px;
   height: 29.03px;
   color: white;
   background-color: blue;
   border: 2px solid blue;
   border-radius: 4px;
+  margin-top: 20px;
 }
 .dropdown {
   position: relative;
@@ -80,10 +82,10 @@
   display: block;
 }
 .delete-button {
-  background-color: #ccc;
+  background-color: #b1cfec;
   color: white;
   border: none;
-  border-radius: 50%; 
+  border-radius: 30%; 
   padding: 5px 10px;
   cursor: pointer;
   font-size: 12px;
