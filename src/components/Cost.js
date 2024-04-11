@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./cost.css";
 import Summary from "./Summary";
+import { useEmployees } from "../context/EmployeesContext";
 
 function OhItem(props) {
   return (
@@ -52,6 +53,9 @@ function OhItem(props) {
 }
 
 export default function Cost() {
+  const {
+    setTotalAmount
+  } = useEmployees();
   const [ohItems, setOhItem] = useState([
     {
       description: "",
@@ -68,6 +72,7 @@ export default function Cost() {
           ? parseFloat(ohItem.amount)
           : parseFloat(ohItem.amount) / 12;
     });
+    setTotalAmount(total);
     return total;
   };
 
