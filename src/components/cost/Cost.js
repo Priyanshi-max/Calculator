@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./cost.css";
-import Summary from "./Summary";
-import { useEmployees } from "../context/EmployeesContext";
+import Summary from "../summary/Summary";
+import { useEmployees } from "../../context/EmployeesContext";
 
 function OhItem(props) {
   return (
@@ -53,9 +53,7 @@ function OhItem(props) {
 }
 
 export default function Cost() {
-  const {
-    setTotalAmount
-  } = useEmployees();
+  const { setTotalAmount } = useEmployees();
   const [ohItems, setOhItem] = useState([
     {
       description: "",
@@ -75,14 +73,19 @@ export default function Cost() {
     setTotalAmount(total);
     return total;
   };
-  
 
   return (
     <div className="oh-container">
       <div className="oh-header">
-        <div style={{ flex: 4 , color:"#3D475C" , fontSize:"14px"}}>Description</div>
-        <div style={{ flex: 1 , color:"#3D475C" , fontSize:"14px" }}>Amount</div>
-        <div style={{ flex: 2 , color:"#3D475C" ,fontSize:"14px"}}>Occurrence</div>
+        <div style={{ flex: 4, color: "#3D475C", fontSize: "14px" }}>
+          Description
+        </div>
+        <div style={{ flex: 1, color: "#3D475C", fontSize: "14px" }}>
+          Amount
+        </div>
+        <div style={{ flex: 2, color: "#3D475C", fontSize: "14px" }}>
+          Occurrence
+        </div>
       </div>
       <div className="oh-list">
         {ohItems.map((ohItem, idx) => {

@@ -1,7 +1,7 @@
 import React from 'react'
-import Cost from '../components/Cost'
-import Settings from '../components/Settings'
-import Summary from '../components/Summary'
+import Cost from "../components/cost/Cost";
+import Settings from "../components/settings/Settings";
+import Summary from "../components/summary/Summary";
 import './calculator.css'
 
 export default function Calculator() {

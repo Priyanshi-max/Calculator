@@ -1,5 +1,5 @@
 import React from "react";
-import { useEmployees } from "../context/EmployeesContext";
+import { useEmployees } from "../../context/EmployeesContext";
 import "./summary.css";
 
 export default function Summary({ totalAmount }) {

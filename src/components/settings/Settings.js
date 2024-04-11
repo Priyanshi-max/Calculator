@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./settings.css";
-import { useEmployees } from "../context/EmployeesContext";
+import { useEmployees } from "../../context/EmployeesContext";
 
 export default function Settings() {
   const {
@@ -10,8 +10,8 @@ export default function Settings() {
     addGst,
     setAddGst,
     setGst,
-    employeeSalary, 
-    totalAmount
+    employeeSalary,
+    totalAmount,
   } = useEmployees();
 
   const handleNumberOfEmployeesChange = (event) => {
