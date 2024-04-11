@@ -54,10 +54,10 @@ export default function Summary({ totalAmount }) {
           </p>
         )}
         <p>CashFlow per Month : Rs.{cashFlowPerMonth}</p>
-        <p>
+        {/* <p>
           Company Paying from Pocket : Rs.
           {gst + totalCostPerEmployee - cashFlowPerMonth}
-        </p>
+        </p> */}
       </div>
     </div>
   );
