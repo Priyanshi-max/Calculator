@@ -33,7 +33,7 @@ export default function Settings() {
 
   const calculateGst = () => {
     if (addGst) {
-      const gstAmount = (totalCostPerEmployee * 18) / 100;
+      const gstAmount = totalCostPerEmployee * 0.18;
       return gstAmount;
     }
     return 0;

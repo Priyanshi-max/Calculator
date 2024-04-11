@@ -15,6 +15,11 @@ export default function Summary({ totalAmount }) {
   const totalCostPerEmployee =
     totalAmount / numberOfEmployees + parseFloat(employeeSalary);
 
+  const totalcash =
+    totalCostPerEmployee + totalCostPerEmployee * (profitPercentage / 100);
+
+  const cashFlowPerMonth = totalcash - totalcash * 0.1;
+
   return (
     <div className="summary-block">
       <div className="employee-info">
@@ -32,25 +37,27 @@ export default function Summary({ totalAmount }) {
         </div>
       </div>
       <div className="summary-info">
-        <p style={{ color: "#3D475C" }}> Total Cost - Rs.{totalAmount}</p>
-        <p style={{ color: "#3D475C" }}>
+        <p> Total Cost - Rs.{totalAmount}</p>
+        <p>
           Cost Per Person - Rs.{(totalAmount / numberOfEmployees).toFixed(2)}
         </p>
-        <p style={{ color: "#3D475C" }}>
-          Total Cost Per Employee - Rs.{totalCostPerEmployee.toFixed(2)}
-        </p>
-        <p style={{ color: "#3D475C" }}>
+        <p>Total Cost Per Employee - Rs.{totalCostPerEmployee.toFixed(2)}</p>
+        <p>
           Profit - Rs.
-          {(totalCostPerEmployee / numberOfEmployees) *
-            (profitPercentage / 100).toFixed(2)}
+          {(totalCostPerEmployee * (profitPercentage / 100)).toFixed(2)}
         </p>
 
         {addGst && (
-          <p style={{ color: "#3D475C" }}>
+          <p>
             Total Cost Per Employee with GST - Rs.
-            {gst + totalCostPerEmployee}
+            {(gst + totalCostPerEmployee).toFixed(2)}
           </p>
         )}
+        <p>CashFlow per Month : Rs.{cashFlowPerMonth}</p>
+        <p>
+          Company Paying from Pocket : Rs.
+          {gst + totalCostPerEmployee - cashFlowPerMonth}
+        </p>
       </div>
     </div>
   );
