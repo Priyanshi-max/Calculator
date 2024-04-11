@@ -33,12 +33,24 @@ export default function Summary({ totalAmount }) {
       </div>
       <div className="summary-info">
         <p style={{ color: "#3D475C" }}> Total Cost - Rs.{totalAmount}</p>
-        <p style={{ color: "#3D475C" }}>Cost Per Person - Rs.{totalAmount / numberOfEmployees}</p>
-        <p style={{ color: "#3D475C" }}>Total Cost Per Employee - Rs.{totalCostPerEmployee}</p>
-        <p style={{ color: "#3D475C" }}>Profit - Rs.{(totalCostPerEmployee / numberOfEmployees) * (profitPercentage / 100)}</p>
-        
-        {addGst && <p style={{ color: "#3D475C" }}>Total Cost Per Person with GST - Rs.{gst+totalCostPerEmployee}</p>}
-        
+        <p style={{ color: "#3D475C" }}>
+          Cost Per Person - Rs.{(totalAmount / numberOfEmployees).toFixed(2)}
+        </p>
+        <p style={{ color: "#3D475C" }}>
+          Total Cost Per Employee - Rs.{totalCostPerEmployee.toFixed(2)}
+        </p>
+        <p style={{ color: "#3D475C" }}>
+          Profit - Rs.
+          {(totalCostPerEmployee / numberOfEmployees) *
+            (profitPercentage / 100).toFixed(2)}
+        </p>
+
+        {addGst && (
+          <p style={{ color: "#3D475C" }}>
+            Total Cost Per Employee with GST - Rs.
+            {gst + totalCostPerEmployee}
+          </p>
+        )}
       </div>
     </div>
   );

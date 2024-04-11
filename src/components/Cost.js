@@ -67,14 +67,15 @@ export default function Cost() {
   const getTotalAmount = () => {
     let total = 0;
     ohItems.forEach((ohItem) => {
-      total +=
-        ohItem.occurance === "monthly"
-          ? parseFloat(ohItem.amount)
-          : parseFloat(ohItem.amount) / 12;
+      const amount = parseFloat(ohItem.amount);
+      if (!isNaN(amount) && amount > 0) {
+        total += ohItem.occurance === "monthly" ? amount : amount / 12;
+      }
     });
     setTotalAmount(total);
     return total;
   };
+  
 
   return (
     <div className="oh-container">
